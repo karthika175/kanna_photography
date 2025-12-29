@@ -1,0 +1,14 @@
+# Google Apps Script file - uses different global objects
+google-sheets-script.js
+
+# Build outputs
+dist/
+build/
+
+# Dependencies
+node_modules/
+
+# Environment files
+.env
+.env.local
+.env.production
