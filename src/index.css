@@ -1,3 +1,207 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+/* Butler Font - Custom font, using similar serif as fallback */
+@font-face {
+  font-family: 'Butler';
+  src: local('Georgia'), local('Times New Roman');
+  font-weight: 200 600;
+  font-display: swap;
+}
+
+/* Metropolis Font - Using system sans-serif as close match */
+@font-face {
+  font-family: 'Metropolis';
+  src: local('Inter'), local('system-ui'), local('-apple-system');
+  font-weight: 200 600;
+  font-display: swap;
+}
+
+/* Tailwind v4 Theme Configuration */
+@theme {
+  /* Colors */
+  --color-primary: #00d2d9;
+  --color-primary-dark: #007e8c;
+  --color-secondary: #00a7b3;
+  --color-accent-pink: #007e8c;
+  --color-accent-green: #52fff3;
+  --color-text: #8c8c8c;
+  --color-text-dark: #3d3d3d;
+  --color-border: #d1d5db;
+  --color-border-light: rgba(82,82,82,.1);
+  --color-background-light: #f8fafc;
+  --color-header-footer-background: #262626;
+  --color-white: #ffffff;
+  --color-link: #00fdff;
+  --color-primary-10: #005866;
+
+  /* Font Families */
+  --font-butler: 'Butler', Georgia, 'Times New Roman', serif;
+  --font-metropolis: 'Metropolis', Inter, system-ui, -apple-system, sans-serif;
+  --font-roboto: 'Roboto Slab', serif;
+
+  /* Font Sizes with Line Heights */
+  --font-size-h1: 36px;
+  --line-height-h1: 1.4em;
+  --font-size-h2: 30px;
+  --line-height-h2: 1.3em;
+  --font-size-h3: 24px;
+  --line-height-h3: 1.3em;
+
+  /* Border Radius */
+  --radius-btn: 9px;
+
+  /* Box Shadows */
+  --shadow-dropdown: 0px 0px 10px rgba(0,0,0,.11);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-metropolis);
+  font-size: 16px;
+  line-height: 1.65em;
+  color: var(--color-text);
+  margin: 0;
+  min-width: 320px;
+}
+
+h1 {
+  font-family: var(--font-butler);
+  font-size: var(--font-size-h1);
+  line-height: var(--line-height-h1);
+  font-weight: normal;
+}
+
+h2 {
+  font-family: var(--font-butler);
+  font-size: var(--font-size-h2);
+  line-height: var(--line-height-h2);
+  font-weight: normal;
+}
+
+h3 {
+  font-family: var(--font-butler);
+  font-size: var(--font-size-h3);
+  line-height: var(--line-height-h3);
+  font-weight: normal;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  vertical-align: middle;
+  border: 0;
+}
+
+/* Container */
+.container-custom {
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+  max-width: 1200px;
+}
+
+@media (max-width: 921px) {
+  .container-custom {
+    max-width: 1024px;
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+}
+
+@media (max-width: 767px) {
+  .container-custom {
+    max-width: 767px;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+
+  h1 {
+    font-size: 32px;
+  }
+
+  h2 {
+    font-size: 25px;
+  }
+
+  h3 {
+    font-size: 20px;
+  }
+}
+
+/* Button Styles */
+.btn-primary {
+  font-family: var(--font-butler);
+  font-size: 18px;
+  background-color: var(--color-accent-pink);
+  color: white;
+  border: 1px solid var(--color-accent-pink);
+  border-radius: var(--radius-btn);
+  padding: 0.75rem 1.5rem;
+  transition: all 0.3s;
+  cursor: pointer;
+  display: inline-block;
+  text-decoration: none;
+}
+
+.btn-primary:hover {
+  background-color: #00a7b3;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+}
+
+/* Navigation Link */
+.nav-link {
+  font-family: var(--font-metropolis);
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  padding: 0.5rem 0.875rem;
+  transition: color 0.3s;
+  text-decoration: none;
+  color: var(--color-text);
+}
+
+.nav-link:hover {
+  color: var(--color-accent-green);
+}
+
+/* Section Padding */
+.section-padding {
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+}
+
+@media (min-width: 768px) {
+  .section-padding {
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .section-padding {
+    padding-top: 6rem;
+    padding-bottom: 6rem;
+  }
+}
+
+/* Animations */
+.fade-in {
+  animation: fadeIn 0.6s ease-in;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
