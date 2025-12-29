@@ -2,6 +2,7 @@ import { motion } from 'framer-motion';
 import { useInView } from '../hooks/useInView';
 import { siteConfig } from '../config';
 import { FaCheck } from 'react-icons/fa';
+import { getAssetPath } from '../utils/paths';
 
 const About = () => {
   const [ref, isInView] = useInView({ threshold: 0.2 });
@@ -48,7 +49,7 @@ const About = () => {
             className="relative aspect-video rounded-lg overflow-hidden shadow-lg"
           >
              <img
-                src={siteConfig.about.imageUrl}
+                src={getAssetPath(siteConfig.about.imageUrl)}
                 alt={'about img'}
               />
          

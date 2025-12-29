@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion';
 import { useInView } from '../../hooks/useInView';
+import { getAssetPath } from '../../utils/paths';
 
 const GalleryGrid = ({ images, title }) => {
   const [ref, isInView] = useInView({ threshold: 0.1 });
@@ -29,7 +30,7 @@ const GalleryGrid = ({ images, title }) => {
               className="h-full group relative aspect-square overflow-hidden rounded-lg shadow-md hover:shadow-xl transition-all duration-300"
             >
               <img
-                src={image}
+                src={getAssetPath(image)}
                 alt={`Gallery ${index + 1}`}
                 style={{height:'100%'}}
                 className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"

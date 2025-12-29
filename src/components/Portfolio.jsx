@@ -2,6 +2,7 @@ import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import { useInView } from '../hooks/useInView';
 import { siteConfig } from '../config';
+import { getAssetPath } from '../utils/paths';
 
 const Portfolio = () => {
   const [ref, isInView] = useInView({ threshold: 0.1 });
@@ -35,7 +36,7 @@ const Portfolio = () => {
                 className="group relative block aspect-square overflow-hidden rounded-lg shadow-md hover:shadow-xl transition-all duration-300"
               >
                 <img
-                  src={item.image}
+                  src={getAssetPath(item.image)}
                   alt={item.title}
                   style={{height:'100%'}}
                   className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"

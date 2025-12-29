@@ -2,6 +2,7 @@ import { motion } from 'framer-motion';
 import { useEffect, useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { handleHashClick } from '../../utils/navigation';
+import { getAssetPath } from '../../utils/paths';
 
 const SectionHero = ({ title, subtitle, videoUrl, videoPoster, ctaText, ctaLink }) => {
   const videoRef = useRef(null);
@@ -29,14 +30,14 @@ const SectionHero = ({ title, subtitle, videoUrl, videoPoster, ctaText, ctaLink 
             loop
             muted
             playsInline
-            poster={videoPoster}
+            poster={getAssetPath(videoPoster)}
             className="w-full h-full object-cover"
           >
-            <source src={videoUrl} type="video/mp4" />
+            <source src={getAssetPath(videoUrl)} type="video/mp4" />
           </video>
         ) : videoPoster ? (
           <img
-            src={videoPoster}
+            src={getAssetPath(videoPoster)}
             alt="Hero background"
             className="w-full h-full object-cover"
           />

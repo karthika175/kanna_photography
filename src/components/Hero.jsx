@@ -2,6 +2,7 @@ import { motion } from 'framer-motion';
 import { useNavigate } from 'react-router-dom';
 import { siteConfig } from '../config';
 import { handleHashClick } from '../utils/navigation';
+import { getAssetPath } from '../utils/paths';
 
 const Hero = () => {
   const navigate = useNavigate();
@@ -14,10 +15,10 @@ const Hero = () => {
           loop
           muted
           playsInline
-          poster={siteConfig.hero.videoPoster}
+          poster={getAssetPath(siteConfig.hero.videoPoster)}
           className="w-full h-full object-cover"
         >
-          <source src={siteConfig.hero.videoUrl} type="video/mp4" />
+          <source src={getAssetPath(siteConfig.hero.videoUrl)} type="video/mp4" />
         </video>
       </div>
 

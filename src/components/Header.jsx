@@ -4,6 +4,7 @@ import { FaBars, FaTimes, FaChevronDown } from 'react-icons/fa';
 import { Link, useNavigate } from 'react-router-dom';
 import { siteConfig } from '../config';
 import { navigationConfig } from '../routes.config';
+import { getAssetPath } from '../utils/paths';
 
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -77,7 +78,7 @@ const Header = () => {
           <Link to="/" className="flex items-center">
             {siteConfig.logo.imageUrl ? (
               <img
-                src={siteConfig.logo.imageUrl}
+                src={getAssetPath(siteConfig.logo.imageUrl)}
                 alt={siteConfig.studioName}
                 style={{ width: siteConfig.logo.width, height: siteConfig.logo.height }}
               />
